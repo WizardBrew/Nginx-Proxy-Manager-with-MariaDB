@@ -37,7 +37,7 @@ docker run -d \
   --network npm-net \
   --ip 10.10.10.20 \
   --restart unless-stopped \
-  -p 8051:81 \
+  -p 8040:81 \
   -p 80:80 \
   -p 443:443 \
   -e DB_MYSQL_HOST=10.10.10.10 \
@@ -51,7 +51,7 @@ docker run -d \
 
 ---
 ## 🔐 Access Dashboard
-# URL: http://192.168.40.20:8051
+# URL: http://192.168.200.20:8080
 # Login: admin@example.com / changeme
 # Change credentials immediately.
 
