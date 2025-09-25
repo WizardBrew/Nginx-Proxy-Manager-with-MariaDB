@@ -13,7 +13,7 @@ docker network create \
   --driver bridge \
   --subnet 10.10.10.0/24 \
   --gateway 10.10.10.1 \
-  npm-net
+  npm-net ```
 ---
 # 📦 Setup 2:  Volumes
 docker volume create npm-app-data
