@@ -7,13 +7,13 @@ Modular, reproducible deployment of Nginx Proxy Manager with MariaDB backend, cu
 ---
 ## 📦 Setup 1: Network
 
-```bash
+
 # Create custom Docker network
 docker network create \
   --driver bridge \
   --subnet 10.10.10.0/24 \
   --gateway 10.10.10.1 \
-  npm-net ```
+  npm-net 
 ---
 # 📦 Setup 2:  Volumes
 docker volume create npm-app-data
@@ -54,3 +54,4 @@ docker run -d \
 # URL: http://192.168.40.20:8051
 # Login: admin@example.com / changeme
 # Change credentials immediately.
+
