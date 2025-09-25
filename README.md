@@ -14,11 +14,11 @@ docker network create \
   --subnet 10.10.10.0/24 \
   --gateway 10.10.10.1 \
   npm-net
-
+---
 # 📦 Setup 2:  Volumes
 docker volume create npm-app-data
 docker volume create npm-app-letsencrypt
-
+---
 # 📦 Step 3: Deploy MariaDB
 docker run -d \
   --name npm-db \
@@ -30,7 +30,7 @@ docker run -d \
   -e MYSQL_USER=npmuser \
   -e MYSQL_PASSWORD=npmuserpass \
   mariadb:10.5
-
+---
 # 📦 Step 4: Deploy NPM Frontend
 docker run -d \
   --name npm-app \
@@ -49,7 +49,7 @@ docker run -d \
   -v npm-app-letsencrypt:/etc/letsencrypt \
   jc21/nginx-proxy-manager:2.12.6
 
-
+---
 ## 🔐 Access Dashboard
 # URL: http://192.168.40.20:8051
 # Login: admin@example.com / changeme
