@@ -1,25 +1,31 @@
+
 # Nginx-Proxy-Manager-with-MariaDB
-# 🧱 WizardCloud Pi — Nginx Proxy Manager Stack
+
+## 🧱 WizardCloud Pi — Nginx Proxy Manager 
 Modular, reproducible deployment of Nginx Proxy Manager with MariaDB backend, custom Docker network, static IPs, and branded proxy routing.
 
 ---
-# Layout- Network, Volumes, Database, and NPM Frontend
----
+ - List item
+ -  Layout- Network, Volumes, Database, and NPM Frontend
+
 ## 📦 Setup 1: Network
 
-
 # Create custom Docker network
+
 docker network create \
   --driver bridge \
   --subnet 10.10.10.0/24 \
   --gateway 10.10.10.1 \
   npm-net 
+  
 ---
 # 📦 Setup 2:  Volumes
 docker volume create npm-app-data
 docker volume create npm-app-letsencrypt
+
 ---
 # 📦 Step 3: Deploy MariaDB
+
 docker run -d \
   --name npm-db \
   --network npm-net \
@@ -30,6 +36,7 @@ docker run -d \
   -e MYSQL_USER=npmuser \
   -e MYSQL_PASSWORD=npmuserpass \
   mariadb:10.5
+  
 ---
 # 📦 Step 4: Deploy NPM Frontend
 docker run -d \
@@ -50,8 +57,14 @@ docker run -d \
   jc21/nginx-proxy-manager:2.12.6
 
 ---
-## 🔐 Access Dashboard
-# URL: http://192.168.200.20:8080
-# Login: admin@example.com / changeme
-# Change credentials immediately.
+# 🔐 Access Dashboard
 
+## URL: http://192.168.200.20:8080
+## Login: admin@example.com / changeme
+## Change credentials immediately.
+
+---
+
+| The Repo Owner - | [jc21](https://github.com/jc21)  |
+|--|--|
+|Credit: nginx-proxy-manager repo |  <img src="https://avatars.githubusercontent.com/u/1518257?v=4" alt="enter image description here" width="60"/>
